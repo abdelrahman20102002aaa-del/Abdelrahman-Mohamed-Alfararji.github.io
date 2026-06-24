@@ -3,142 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdelrahman Mohamed - Portfolio</title>
+    <title>Abdelrahman Mohamed Alfararji | Portfolio</title>
     <style>
-        /* التنسيقات والألوان (CSS) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117; /* خلفية داكنة فخمة */
+            background-color: #0d1117;
             color: #c9d1d9;
             margin: 0;
             padding: 0;
         }
-
         header {
             text-align: center;
-            padding: 2.5rem;
+            padding: 3.5rem 1rem;
             background-color: #161b22;
             border-bottom: 1px solid #30363d;
         }
-
         h1 {
-            color: #58a6ff; /* أزرق شبكات وتكنولوجيا */
+            color: #58a6ff;
             margin: 0 0 10px 0;
+            font-size: 2.6rem;
         }
-
         h2 {
-            color: #7ee787; /* أخضر سايبر وسوك */
-            font-size: 1.2rem;
+            color: #7ee787;
+            font-size: 1.3rem;
             font-weight: 400;
             margin: 0;
         }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
+        .education {
             color: #8b949e;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
+            font-size: 1rem;
+            margin-top: 8px;
         }
-
-        nav ul li a:hover {
-            color: #58a6ff;
-        }
-
         section {
-            padding: 2rem;
-            max-width: 800px;
+            padding: 2.5rem 1.5rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
-
         h3 {
             color: #f0f6fc;
             border-bottom: 2px solid #21262d;
             padding-bottom: 10px;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
-
-        ul {
-            padding-left: 20px;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
         }
-
-        li {
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
-
-        .project-card {
+        .card {
             background-color: #161b22;
-            margin: 1.5rem 0;
             padding: 1.5rem;
-            border-radius: 6px;
+            border-radius: 8px;
             border: 1px solid #30363d;
-            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
         }
-
-        .project-card:hover {
-            transform: translateY(-3px);
+        .card:hover {
+            transform: translateY(-4px);
             border-color: #58a6ff;
         }
-
-        .project-card h4 {
-            margin: 0 0 10px 0;
+        .card h4 {
+            margin: 0 0 12px 0;
             color: #58a6ff;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
-
-        .project-card p {
-            margin: 0;
-            line-height: 1.5;
-            color: #8b949e;
+        .tags {
+            margin-top: 10px;
+            margin-bottom: 15px;
         }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: #161b22;
-            border-top: 1px solid #30363d;
-            margin-top: 3rem;
-        }
-
-        .cv-button {
+        .tag {
             display: inline-block;
-            margin: 1rem 0;
-            padding: 10px 20px;
-            background-color: #238636; /* زر أخضر للتحميل */
+            background-color: #21262d;
+            color: #8b949e;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #30363d;
+        }
+        .cert-tag {
+            background-color: #1f242c;
+            color: #a371f7;
+            border: 1px solid #6f42c1;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #238636;
             color: #ffffff;
+            padding: 12px 20px;
+            text-align: center;
             text-decoration: none;
             border-radius: 6px;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1rem;
             transition: background-color 0.2s;
+            margin-top: 15px;
         }
-
-        .cv-button:hover {
+        .btn:hover {
             background-color: #2ea44f;
         }
-
-        .social-links {
-            margin-top: 1rem;
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            margin-top: 4rem;
         }
-
-        .social-links a {
-            margin: 0 10px;
+        .contact-link {
             color: #58a6ff;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
         }
-
-        .social-links a:hover {
+        .contact-link:hover {
+            text-underline-position: under;
             text-decoration: underline;
         }
     </style>
@@ -146,64 +127,57 @@
 <body>
 
     <header>
-        <h1>Abdelrahman Mohamed</h1>
+        <h1>Abdelrahman Mohamed Alfararji</h1>
         <h2>Junior Network & Cyber SOC Engineer</h2>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="education">🎓 Graduate from <strong>Digilians</strong></div>
     </header>
 
     <section id="about">
         <h3>About Me</h3>
-        <p>A dedicated Junior Network and Cyber SOC Engineer passionate about securing network infrastructures and monitoring security systems. I possess a solid foundation in routing, switching, and Security Operations Center (SOC) workflows, with a strong interest in network automation using Python and troubleshooting infrastructure anomalies.</p>
+        <p>A highly motivated Network and Cyber SOC Engineer graduate from Digilians. Passionate about designing scalable network infrastructures, implementing core security mechanisms, and continuous technical growth. Actively preparing for industry-standard certifications to further solidify my technical expertise.</p>
     </section>
 
-    <section id="skills">
-        <h3>Skills & Technologies</h3>
-        <ul>
-            <li><strong>Networking:</strong> Routing & Switching (CCNA level), L3 Switches, Wireless LAN Controllers (WLC).</li>
-            <li><strong>Cyber Security:</strong> SOC Monitoring, Traffic Analysis, Incident Log Review.</li>
-            <li><strong>Automation & Dev:</strong> Python Scripting, API Integration, Custom Discord Bots.</li>
-            <li><strong>Simulation Tools:</strong> Cisco Packet Tracer, Wireshark, GitHub Environment.</li>
-        </ul>
+    <section id="certifications">
+        <h3>Future & On-going Certifications</h3>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <div class="card">
+                <h4>Cisco Certified Network Associate (CCNA)</h4>
+                <p>Focusing on network fundamentals, IP connectivity, IP services, and security fundamentals.</p>
+                <div class="tags"><span class="tag cert-tag">In Progress</span></div>
+            </div>
+            <div class="card">
+                <h4>Huawei Certified ICT Associate (HCIA)</h4>
+                <p>Developing essential knowledge and skills in routing, switching, and enterprise network features.</p>
+                <div class="tags"><span class="tag cert-tag">In Progress</span></div>
+            </div>
+        </div>
     </section>
 
     <section id="projects">
-        <h3>Featured Projects</h3>
-        
-        <div class="project-card">
-            <h4>Discord Audio & Automation Bot</h4>
-            <p>Built a functional Discord bot utilizing Python (discord.py) and yt-dlp to stream high-quality audio into voice channels. Managed background tasks and leveraged FFmpeg for smooth media stream handling.</p>
-        </div>
+        <h3>Featured Engineering Projects</h3>
+        <div class="grid">
+            
+            <div class="card" style="grid-column: 1 / -1; text-align: center; padding: 2.5rem;">
+                <h4>Network Infrastructure & Cyber Security Labs</h4>
+                <p>A comprehensive repository containing enterprise-grade network designs, multi-branch routing topologies, and advanced security configurations. Includes hands-on implementations of Static/Dynamic NAT, PAT, and Access Control Lists (ACLs) simulated via Cisco Packet Tracer.</p>
+                <div class="tags" style="justify-content: center; display: flex; flex-wrap: wrap; gap: 5px;">
+                    <span class="tag">Multi-Branch WAN</span>
+                    <span class="tag">Routing & Switching</span>
+                    <span class="tag">NAT / PAT</span>
+                    <span class="tag">ACL Security</span>
+                    <span class="tag">Packet Tracer Labs</span>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1sCpb4B7rE0lEnsBCeMnI82jfM9h_0x21?usp=sharing" target="_blank" class="btn">👉 View My Projects on Google Drive</a>
+            </div>
 
-        <div class="project-card">
-            <h4>Enterprise Secure Network Design</h4>
-            <p>Designed and simulated a scalable corporate network infrastructure in Cisco Packet Tracer. Integrated Layer 3 switching and centralized wireless management (WLC) to guarantee optimized traffic routing and secure access control.</p>
-        </div>
-
-        <div class="project-card">
-            <h4>Network Traffic Analysis Lab</h4>
-            <p>Conducted traffic analysis simulation using Wireshark to inspect packet structures, capture log details, and trace potential anomalies, mapping them to practical security defense plays.</p>
         </div>
     </section>
 
-    <footer id="contact">
+    <footer>
         <h3>Get In Touch</h3>
-        <p>Email: <a href="mailto:abdelrahman20102002aaa@gmail.com" style="color: #58a6ff; text-decoration: none;">abdelrahman20102002aaa@gmail.com</a></p>
-        <a href="#" class="cv-button">Download CV</a>
-        <div class="social-links">
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/abdelrahman20102002aaa-del" target="_blank">GitHub</a>
-        </div>
+        <p>Let's build and secure something great together.</p>
+        <p>Email: <a class="contact-link" href="mailto:abdelrahman20102002aaa@gmail.com">abdelrahman20102002aaa@gmail.com</a></p>
     </footer>
 
-    <script>
-        console.log("Abdelrahman's Portfolio is fully loaded and running seamlessly!");
-    </script>
 </body>
 </html>
