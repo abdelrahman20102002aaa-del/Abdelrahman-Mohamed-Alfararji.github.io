@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdelrahman Mohamed - Portfolio</title>
+    <style>
+        /* التنسيقات والألوان (CSS) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117; /* خلفية داكنة فخمة */
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 2.5rem;
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+        }
+
+        h1 {
+            color: #58a6ff; /* أزرق شبكات وتكنولوجيا */
+            margin: 0 0 10px 0;
+        }
+
+        h2 {
+            color: #7ee787; /* أخضر سايبر وسوك */
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #8b949e;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #58a6ff;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            color: #f0f6fc;
+            border-bottom: 2px solid #21262d;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .project-card {
+            background-color: #161b22;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: #58a6ff;
+        }
+
+        .project-card h4 {
+            margin: 0 0 10px 0;
+            color: #58a6ff;
+            font-size: 1.2rem;
+        }
+
+        .project-card p {
+            margin: 0;
+            line-height: 1.5;
+            color: #8b949e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            margin-top: 3rem;
+        }
+
+        .cv-button {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 10px 20px;
+            background-color: #238636; /* زر أخضر للتحميل */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .cv-button:hover {
+            background-color: #2ea44f;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Abdelrahman Mohamed</h1>
+        <h2>Junior Network & Cyber SOC Engineer</h2>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h3>About Me</h3>
+        <p>A dedicated Junior Network and Cyber SOC Engineer passionate about securing network infrastructures and monitoring security systems. I possess a solid foundation in routing, switching, and Security Operations Center (SOC) workflows, with a strong interest in network automation using Python and troubleshooting infrastructure anomalies.</p>
+    </section>
+
+    <section id="skills">
+        <h3>Skills & Technologies</h3>
+        <ul>
+            <li><strong>Networking:</strong> Routing & Switching (CCNA level), L3 Switches, Wireless LAN Controllers (WLC).</li>
+            <li><strong>Cyber Security:</strong> SOC Monitoring, Traffic Analysis, Incident Log Review.</li>
+            <li><strong>Automation & Dev:</strong> Python Scripting, API Integration, Custom Discord Bots.</li>
+            <li><strong>Simulation Tools:</strong> Cisco Packet Tracer, Wireshark, GitHub Environment.</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h3>Featured Projects</h3>
+        
+        <div class="project-card">
+            <h4>Discord Audio & Automation Bot</h4>
+            <p>Built a functional Discord bot utilizing Python (discord.py) and yt-dlp to stream high-quality audio into voice channels. Managed background tasks and leveraged FFmpeg for smooth media stream handling.</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Enterprise Secure Network Design</h4>
+            <p>Designed and simulated a scalable corporate network infrastructure in Cisco Packet Tracer. Integrated Layer 3 switching and centralized wireless management (WLC) to guarantee optimized traffic routing and secure access control.</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Network Traffic Analysis Lab</h4>
+            <p>Conducted traffic analysis simulation using Wireshark to inspect packet structures, capture log details, and trace potential anomalies, mapping them to practical security defense plays.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h3>Get In Touch</h3>
+        <p>Email: <a href="mailto:abdelrahman20102002aaa@gmail.com" style="color: #58a6ff; text-decoration: none;">abdelrahman20102002aaa@gmail.com</a></p>
+        <a href="#" class="cv-button">Download CV</a>
+        <div class="social-links">
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a> | 
+            <a href="https://github.com/abdelrahman20102002aaa-del" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        console.log("Abdelrahman's Portfolio is fully loaded and running seamlessly!");
+    </script>
+</body>
+</html>
