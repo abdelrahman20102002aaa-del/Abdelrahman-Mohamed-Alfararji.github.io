@@ -18,6 +18,15 @@
             background-color: #161b22;
             border-bottom: 1px solid #30363d;
         }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #58a6ff;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
         h1 {
             color: #58a6ff;
             margin: 0 0 10px 0;
@@ -33,6 +42,14 @@
             color: #8b949e;
             font-size: 1rem;
             margin-top: 8px;
+        }
+        .contact-info {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #8b949e;
+        }
+        .contact-info span {
+            margin: 0 10px;
         }
         section {
             padding: 2.5rem 1.5rem;
@@ -127,9 +144,16 @@
 <body>
 
     <header>
+        <img src="_storage_emulated_0_Easy Retouch_IMG_20230722032514_1.jpg" alt="Abdelrahman Mohamed Alfararji" class="profile-img">
+        
         <h1>Abdelrahman Mohamed Alfararji</h1>
         <h2>Junior Network & Cyber SOC Engineer</h2>
         <div class="education">🎓 Graduate from <strong>Digilians</strong></div>
+        
+        <div class="contact-info">
+            <span>📞 <strong>Phone:</strong> +20 114 856 9763</span> | 
+            <span>📍 <strong>Location:</strong> Zagazig, Sharqia, Egypt</span>
+        </div>
     </header>
 
     <section id="about">
