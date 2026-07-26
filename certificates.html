@@ -1,169 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Certificates | Abdelrahman Mohamed</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-            padding: 2.5rem 1rem;
-            background-color: #161b22;
-            border-bottom: 1px solid #30363d;
-        }
-        h1 {
-            color: #58a6ff;
-            margin: 0 0 10px 0;
-        }
-        .back-btn {
-            display: inline-block;
-            background-color: #21262d;
-            color: #c9d1d9;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 6px;
-            border: 1px solid #30363d;
-            font-weight: 600;
-            margin-bottom: 15px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #30363d;
-        }
-        section {
-            padding: 2.5rem 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        h2 {
-            color: #f0f6fc;
-            border-bottom: 2px solid #21262d;
-            padding-bottom: 10px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .card {
-            background-color: #161b22;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: #8a3ffc;
-        }
-        .card h3 {
-            margin: 0 0 10px 0;
-            color: #58a6ff;
-        }
-        .cert-img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin-top: 10px;
-            border: 1px solid #30363d;
-        }
-        .status-tag {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-top: 10px;
-            background-color: rgba(35, 134, 54, 0.15);
-            color: #56d364;
-            border: 1px solid #238636;
-        }
-        .in-progress {
-            background-color: rgba(111, 66, 193, 0.15);
-            color: #a371f7;
-            border: 1px solid #6f42c1;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 5rem;
-            border-top: 1px solid #30363d;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Certificates &amp; Official Credentials — Abdelrahman Mohamed Alfararji</title>
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0A0E14',
+          panel: '#0F1620',
+          panel2: '#141C28',
+          line: '#232D3A',
+          fg: '#DCE3EC',
+          muted: '#7A8699',
+          cyan: '#4DD9C9',
+          amber: '#F2A93C',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+          body: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+ 
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color:#0A0E14; }
+  ::selection { background:#4DD9C9; color:#0A0E14; }
+ 
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(77,217,201,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(77,217,201,0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 30%, transparent 85%);
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 30%, transparent 85%);
+  }
+ 
+  .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(77,217,201,0.55); }
+    50% { box-shadow: 0 0 0 6px rgba(77,217,201,0); }
+  }
+ 
+  .cert-card { transition: all .25s ease; }
+  .cert-card:hover { border-color:#4DD9C9; box-shadow: 0 0 0 1px rgba(77,217,201,0.25), 0 16px 34px -16px rgba(77,217,201,0.3); transform: translateY(-4px); }
+ 
+  .cert-thumb { aspect-ratio: 4/3; background: linear-gradient(135deg, #141C28, #0F1620); }
+ 
+  .section-title { position: relative; display: inline-block; padding-bottom: 16px; }
+  .section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 56px;
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #4DD9C9, rgba(77,217,201,0));
+  }
+ 
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+ 
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-dot { animation: none; }
+    .reveal { transition: none; opacity: 1; transform: none; }
+  }
+</style>
 </head>
-<body>
-
-    <header>
-        <a href="index.html" class="back-btn">⬅️ Back to Portfolio</a>
-        <h1>My Professional Certificates</h1>
-        <p style="color: #8b949e;">Verification of my technical skills and engineering training</p>
-    </header>
-
-    <section>
-        <h2>Earned Certificates</h2>
-        <div class="grid">
-            
-            <div class="card">
-                <h3>Cisco CCNA - Introduction to Networks</h3>
-                <img src="CCNA-_Introduction_to_Networks_certificate_am01148569763-gmail-com_62adb9b8-ea87-41d7-8679-472534690159 (1).pdf" alt="CCNA Certificate" class="cert-img">
-                <div><span class="status-tag">✓ Verified</span></div>
-            </div>
-            
-            <div class="card">
-                <h3>Huawei HCIA - Datacom V1.0</h3>
-                <img src="_HCIA-Datacom V1.0 Course.png" alt="HCIA Datacom" class="cert-img">
-                <div><span class="status-tag">✓ Verified</span></div>
-            </div>
-
-            <div class="card">
-                <h3>Huawei HCIA - Cloud Service V3.5</h3>
-                <img src="_HCIA-Cloud Service V3.5 Course (Arabic).png" alt="HCIA Cloud" class="cert-img">
-                <div><span class="status-tag">✓ Verified</span></div>
-            </div>
-
-            <div class="card">
-                <h3>Computer Network Certification</h3>
-                <img src="Computer Network.png" alt="Computer Network" class="cert-img">
-                <div><span class="status-tag">✓ Verified</span></div>
-            </div>
-
-            <div class="card">
-                <h3>General Knowledge of Computer Networks</h3>
-                <img src="General Knowledge of Computer Networks.png" alt="General Knowledge" class="cert-img">
-                <div><span class="status-tag">✓ Verified</span></div>
-            </div>
-            
+ 
+<body class="bg-ink text-fg font-body">
+ 
+<!-- NAV -->
+<nav class="sticky top-0 z-50 border-b border-line bg-ink/90 backdrop-blur">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="inline-flex items-center gap-2 font-mono text-sm text-muted hover:text-cyan transition-colors">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to Home
+    </a>
+    <div class="hidden sm:flex items-center gap-2 font-mono text-[11px] text-muted border border-line rounded-full px-3 py-1.5">
+      <span class="w-1.5 h-1.5 rounded-full bg-cyan pulse-dot"></span>
+      VERIFIED CREDENTIALS
+    </div>
+  </div>
+</nav>
+ 
+<!-- PROFILE HEADER -->
+<header class="relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+  <div class="relative max-w-4xl mx-auto px-6 pt-16 pb-10 text-center">
+ 
+    <div class="flex justify-center mb-6">
+      <div class="relative w-24 h-24 sm:w-28 sm:h-28">
+        <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-cyan/40 to-transparent blur-sm"></div>
+        <!-- Profile photo: "my photo.jpg" (space URL-encoded as %20) -->
+        <img src="my%20photo.jpg" alt="Abdelrahman Mohamed Alfararji"
+             class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-2 border-line"
+             onerror="this.style.display='none'; document.getElementById('profileFallback').style.display='flex';" />
+        <div id="profileFallback" style="display:none;" class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-cyan/40 bg-panel2 items-center justify-center font-display text-2xl text-cyan">
+          AM
         </div>
-
-        <h2 style="margin-top: 4rem;">In-Progress & Future Certifications</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Cisco Certified Network Associate (CCNA)</h3>
-                <p>Focusing on network fundamentals, IP connectivity, IP services, and security fundamentals.</p>
-                <div><span class="status-tag in-progress">⏳ Preparing / In Progress</span></div>
-            </div>
-            <div class="card">
-                <h3>Huawei Certified ICT Associate (HCIA)</h3>
-                <p>Developing essential knowledge and skills in routing, switching, and enterprise network features.</p>
-                <div><span class="status-tag in-progress">⏳ Preparing / In Progress</span></div>
-            </div>
+      </div>
+    </div>
+ 
+    <h1 class="font-display text-2xl sm:text-3xl font-semibold tracking-tight mb-1">Abdelrahman Mohamed Alfararji</h1>
+    <p class="font-mono text-xs text-cyan tracking-[0.15em] mb-6">NETWORK ENGINEER · SOC ANALYST TRACK</p>
+ 
+    <h2 class="section-title font-display text-3xl sm:text-5xl font-bold tracking-tight mx-auto mb-4">Certificates &amp; Official Credentials</h2>
+    <p class="text-muted max-w-2xl mx-auto">
+      Verified certifications and completed academy tracks spanning enterprise networking, routing &amp; switching, and cybersecurity fundamentals.
+    </p>
+  </div>
+</header>
+ 
+<main class="max-w-6xl mx-auto px-6 pb-24">
+ 
+  <!-- HCIA-Datacom Feature (PDF certificate) -->
+  <section class="reveal mb-16">
+    <h2 class="section-title font-display text-2xl font-semibold mb-6">International Certification</h2>
+    <div class="cert-card bg-panel border border-line rounded-xl overflow-hidden md:flex">
+      <div class="cert-thumb md:w-80 shrink-0 relative flex flex-col items-center justify-center gap-3 text-muted">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4">
+          <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+          <path d="M15 2v5h5"/>
+          <path d="M9 13h6M9 17h4"/>
+        </svg>
+        <span class="font-mono text-[11px]">PDF Certificate</span>
+      </div>
+      <div class="p-7 flex flex-col justify-center">
+        <h3 class="font-display font-semibold text-xl mb-2">Huawei HCIA-Datacom</h3>
+        <p class="text-muted text-sm mb-4">International Certification</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-muted mb-5">
+          <span>CERT NO: <span class="text-fg/90">010103901855810442973098281</span></span>
+          <span>VALID THROUGH: <span class="text-cyan">Jul 2029</span></span>
         </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Abdelrahman Mohamed El-Fararji</p>
-    </footer>
-
+        <!-- File: "HCIA international datacome.pdf" (space encoded as %20) -->
+        <a href="HCIA%20international%20datacome.pdf" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 font-mono text-sm text-cyan hover:gap-3 transition-all w-fit">
+          View Official PDF Certificate
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Cisco Networking Academy -->
+  <section class="reveal mb-16">
+    <h2 class="section-title font-display text-2xl font-semibold mb-6">Cisco Networking Academy</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+ 
+      <!-- File: "CCNA-_Enterprise_Networking-_Security-_and..." was truncated in the source list.
+           Best-guess completion used below — replace with the exact filename from your repo if it differs. -->
+      <a href="CCNA-_Enterprise_Networking-_Security-_and_Automation.png" target="_blank" rel="noopener"
+         class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
+        <div class="cert-thumb relative flex items-center justify-center">
+          <img src="CCNA-_Enterprise_Networking-_Security-_and_Automation.png" alt="CCNA Enterprise Networking, Security, and Automation"
+               class="absolute inset-0 w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>
+            <span class="font-mono text-[10px] px-3 text-center">Check exact filename</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-sm mb-1">CCNA: Enterprise Networking, Security, and Automation</h4>
+          <p class="font-mono text-[11px] text-muted">Cisco Networking Academy</p>
+        </div>
+      </a>
+ 
+      <!-- File: "CCNA-_Switching-_Routing-_and_Wireless_Esse..." was truncated in the source list.
+           Best-guess completion used below — replace with the exact filename from your repo if it differs. -->
+      <a href="CCNA-_Switching-_Routing-_and_Wireless_Essentials.png" target="_blank" rel="noopener"
+         class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
+        <div class="cert-thumb relative flex items-center justify-center">
+          <img src="CCNA-_Switching-_Routing-_and_Wireless_Essentials.png" alt="CCNA Switching, Routing, and Wireless Essentials"
+               class="absolute inset-0 w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>
+            <span class="font-mono text-[10px] px-3 text-center">Check exact filename</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-sm mb-1">CCNA: Switching, Routing, and Wireless Essentials</h4>
+          <p class="font-mono text-[11px] text-muted">Cisco Networking Academy</p>
+        </div>
+      </a>
+ 
+      <!-- File: "CCNA-_Introduction_to_Networks_certificate_a..." was truncated in the source list.
+           Best-guess completion used below — replace with the exact filename from your repo if it differs. -->
+      <a href="CCNA-_Introduction_to_Networks_certificate_a.png" target="_blank" rel="noopener"
+         class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
+        <div class="cert-thumb relative flex items-center justify-center">
+          <img src="CCNA-_Introduction_to_Networks_certificate_a.png" alt="CCNA Introduction to Networks"
+               class="absolute inset-0 w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>
+            <span class="font-mono text-[10px] px-3 text-center">Check exact filename</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-sm mb-1">CCNA: Introduction to Networks</h4>
+          <p class="font-mono text-[11px] text-muted">Cisco Networking Academy</p>
+        </div>
+      </a>
+ 
+      <!-- File: "Introduction_to_Cybersecurity_certificate_am01..." was truncated in the source list.
+           Best-guess completion used below — replace with the exact filename from your repo if it differs. -->
+      <a href="Introduction_to_Cybersecurity_certificate_am01.png" target="_blank" rel="noopener"
+         class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
+        <div class="cert-thumb relative flex items-center justify-center">
+          <img src="Introduction_to_Cybersecurity_certificate_am01.png" alt="Introduction to Cybersecurity"
+               class="absolute inset-0 w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
+            <span class="font-mono text-[10px] px-3 text-center">Check exact filename</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-sm mb-1">Introduction to Cybersecurity</h4>
+          <p class="font-mono text-[11px] text-muted">Cisco Networking Academy</p>
+        </div>
+      </a>
+ 
+    </div>
+  </section>
+ 
+  <!-- Huawei ICT Academy -->
+  <section class="reveal">
+    <h2 class="section-title font-display text-2xl font-semibold mb-6">Huawei ICT Academy</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+ 
+      <!-- File: "_HCIA-Cloud Service V3.5 Course (Arabic).png" (space encoded as %20) -->
+      <a href="_HCIA-Cloud%20Service%20V3.5%20Course%20(Arabic).png" target="_blank" rel="noopener"
+         class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
+        <div class="cert-thumb relative flex items-center justify-center">
+          <img src="_HCIA-Cloud%20Service%20V3.5%20Course%20(Arabic).png" alt="HCIA-Cloud Service V3.5"
+               class="absolute inset-0 w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2A93C" stroke-width="1.4"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1.5A4 4 0 0117 18H7z"/></svg>
+            <span class="font-mono text-[10px]">Add image</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-sm mb-1">HCIA-Cloud Service V3.5 (Arabic)</h4>
+          <p class="font-mono text-[11px] text-muted">Huawei ICT Academy</p>
+        </div>
+      </a>
+ 
+      <!-- File: "_HCIA-Datacom V1.0 Course.png" (space encoded as %20) -->
+      <a href="_HCIA-Datacom%20V1.0%20Course.png" target="_blank" rel="noopener"
+         class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
+        <div class="cert-thumb relative flex items-center justify-center">
+          <img src="_HCIA-Datacom%20V1.0%20Course.png" alt="HCIA-Datacom V1.0"
+               class="absolute inset-0 w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2A93C" stroke-width="1.4"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
+            <span class="font-mono text-[10px]">Add image</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-sm mb-1">HCIA-Datacom V1.0 Course</h4>
+          <p class="font-mono text-[11px] text-muted">Huawei ICT Academy</p>
+        </div>
+      </a>
+ 
+      <!-- File: "Computer Network.png" (space encoded as %20) -->
+      <a href="Computer%20Network.png" target="_blank" rel="noopener"
+         class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
+        <div class="cert-thumb relative flex items-center justify-center">
+          <img src="Computer%20Network.png" alt="Computer Network"
+               class="absolute inset-0 w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2A93C" stroke-width="1.4"><path d="M4 12h16M4 6h16M4 18h10"/></svg>
+            <span class="font-mono text-[10px]">Add image</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-sm mb-1">Computer Network</h4>
+          <p class="font-mono text-[11px] text-muted">Huawei ICT Academy</p>
+        </div>
+      </a>
+ 
+      <!-- File: "General Knowledge of Computer Networks.png" (spaces encoded as %20) -->
+      <a href="General%20Knowledge%20of%20Computer%20Networks.png" target="_blank" rel="noopener"
+         class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
+        <div class="cert-thumb relative flex items-center justify-center">
+          <img src="General%20Knowledge%20of%20Computer%20Networks.png" alt="General Knowledge of Computer Networks"
+               class="absolute inset-0 w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2A93C" stroke-width="1.4"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>
+            <span class="font-mono text-[10px]">Add image</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-sm mb-1">General Knowledge of Computer Networks</h4>
+          <p class="font-mono text-[11px] text-muted">Huawei ICT Academy</p>
+        </div>
+      </a>
+ 
+    </div>
+  </section>
+ 
+</main>
+ 
+<footer class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-6 py-10 text-center">
+    <p class="font-mono text-[11px] text-muted/60">© <span id="year"></span> Abdelrahman Mohamed Alfararji.</p>
+  </div>
+</footer>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+ 
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('in');
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+});
+</script>
+ 
 </body>
 </html>
