@@ -1,91 +1,439 @@
-# Next.js
-
-A modern Next.js 15 application built with TypeScript and Tailwind CSS.
-
-## 🚀 Features
-
-- **Next.js 15** - Latest version with improved performance and features
-- **React 19** - Latest React version with enhanced capabilities
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
-
-## 🛠️ Installation
-
-1. Install dependencies:
-  ```bash
-  npm install
-  # or
-  yarn install
-  ```
-
-2. Start the development server:
-  ```bash
-  npm run dev
-  # or
-  yarn dev
-  ```
-3. Open [http://localhost:4028](http://localhost:4028) with your browser to see the result.
-
-## 📁 Project Structure
-
-```
-nextjs/
-├── public/             # Static assets
-├── src/
-│   ├── app/            # App router components
-│   │   ├── layout.tsx  # Root layout component
-│   │   └── page.tsx    # Main page component
-│   ├── components/     # Reusable UI components
-│   ├── styles/         # Global styles and Tailwind configuration
-├── next.config.mjs     # Next.js configuration
-├── package.json        # Project dependencies and scripts
-├── postcss.config.js   # PostCSS configuration
-└── tailwind.config.js  # Tailwind CSS configuration
-
-```
-
-## 🧩 Page Editing
-
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
-
-## 🎨 Styling
-
-This project uses Tailwind CSS for styling with the following features:
-- Utility-first approach for rapid development
-- Custom theme configuration
-- Responsive design utilities
-- PostCSS and Autoprefixer integration
-
-## 📦 Available Scripts
-
-- `npm run dev` - Start development server on port 4028
-- `npm run build` - Build the application for production
-- `npm run start` - Start the development server
-- `npm run serve` - Start the production server
-- `npm run lint` - Run ESLint to check code quality
-- `npm run lint:fix` - Fix ESLint issues automatically
-- `npm run format` - Format code with Prettier
-
-## 📱 Deployment
-
-Build the application for production:
-
-  ```bash
-  npm run build
-  ```
-
-## 📚 Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial
-
-You can check out the [Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## 🙏 Acknowledgments
-
-- Built with [Rocket.new](https://rocket.new)
-- Powered by Next.js and React
-- Styled with Tailwind CSS
-
-Built with ❤️ on Rocket.new
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abdelrahman Mohamed Alfararji — Network Engineer | SOC Analyst Track</title>
+<meta name="description" content="Network Engineer transitioning into a SOC Analyst role. HCIA-Datacom certified, CCNA track. Routing, switching, and threat detection." />
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0A0E14',
+          panel: '#0F1620',
+          panel2: '#141C28',
+          line: '#232D3A',
+          fg: '#DCE3EC',
+          muted: '#7A8699',
+          cyan: '#4DD9C9',
+          amber: '#F2A93C',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+          body: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+ 
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #0A0E14; }
+ 
+  ::selection { background: #4DD9C9; color: #0A0E14; }
+ 
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(77,217,201,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(77,217,201,0.06) 1px, transparent 1px);
+    background-size: 42px 42px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 90%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 90%);
+  }
+ 
+  .cursor-blink { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+ 
+  .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(77,217,201,0.55); }
+    50% { box-shadow: 0 0 0 6px rgba(77,217,201,0); }
+  }
+ 
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+ 
+  .skill-card { transition: all .25s ease; }
+  .skill-card:hover {
+    border-color: #4DD9C9;
+    box-shadow: 0 0 0 1px rgba(77,217,201,0.25), 0 12px 30px -12px rgba(77,217,201,0.25);
+    transform: translateY(-4px);
+  }
+ 
+  .social-btn { transition: all .2s ease; }
+  .social-btn:hover {
+    border-color: #4DD9C9;
+    color: #4DD9C9;
+    box-shadow: 0 0 0 1px rgba(77,217,201,0.3);
+    transform: translateY(-2px);
+  }
+ 
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-blink, .pulse-dot { animation: none; }
+    .reveal { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+ 
+<body class="bg-ink text-fg font-body">
+ 
+<!-- NAV -->
+<nav id="nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#hero" class="font-mono text-cyan text-lg tracking-tight">AM<span class="text-muted">_</span></a>
+ 
+    <div class="hidden md:flex items-center gap-7 font-mono text-[13px] text-muted">
+      <a href="#about" class="hover:text-fg transition-colors">about</a>
+      <a href="#skills" class="hover:text-fg transition-colors">skills</a>
+      <a href="#certifications" class="hover:text-fg transition-colors">certs</a>
+      <a href="#education" class="hover:text-fg transition-colors">education</a>
+      <a href="#experience" class="hover:text-fg transition-colors">experience</a>
+      <a href="#contact" class="hover:text-fg transition-colors">contact</a>
+    </div>
+ 
+    <div class="hidden md:flex items-center gap-2 font-mono text-[11px] text-muted border border-line rounded-full px-3 py-1.5">
+      <span class="w-1.5 h-1.5 rounded-full bg-cyan pulse-dot"></span>
+      SYSTEM ONLINE
+    </div>
+ 
+    <button id="menuBtn" class="md:hidden text-fg" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+ 
+  <div id="mobileMenu" class="hidden md:hidden border-t border-line bg-panel/95 backdrop-blur">
+    <div class="flex flex-col px-6 py-4 gap-4 font-mono text-sm text-muted">
+      <a href="#about" class="hover:text-fg">about</a>
+      <a href="#skills" class="hover:text-fg">skills</a>
+      <a href="#certifications" class="hover:text-fg">certs</a>
+      <a href="#education" class="hover:text-fg">education</a>
+      <a href="#experience" class="hover:text-fg">experience</a>
+      <a href="#contact" class="hover:text-fg">contact</a>
+    </div>
+  </div>
+</nav>
+ 
+<!-- HERO -->
+<header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+ 
+  <div class="relative max-w-3xl mx-auto px-6 text-center">
+ 
+    <div class="flex justify-center mb-7">
+      <div class="relative w-32 h-32">
+        <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-cyan/40 to-transparent blur-sm"></div>
+        <img id="profileImg" src="/profile.jpg" alt="Abdelrahman Mohamed Alfararji"
+             class="relative w-32 h-32 rounded-full object-cover border-2 border-line"
+             onerror="this.style.display='none'; document.getElementById('profileFallback').style.display='flex';" />
+        <div id="profileFallback" style="display:none;" class="relative w-32 h-32 rounded-full border-2 border-cyan/40 bg-panel2 items-center justify-center font-display text-3xl text-cyan">
+          AM
+        </div>
+      </div>
+    </div>
+ 
+    <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-4">// WHOAMI</p>
+ 
+    <h1 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight text-fg mb-4">
+      Abdelrahman Mohamed<br class="hidden sm:block"> Alfararji
+    </h1>
+ 
+    <div class="inline-flex items-center gap-2 bg-panel border border-line rounded-lg px-4 py-2.5 font-mono text-sm sm:text-base text-fg/90 mb-8 min-h-[3rem]">
+      <span class="text-cyan">$</span>
+      <span id="typewriter"></span><span class="cursor-blink text-cyan">▍</span>
+    </div>
+ 
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="resume.pdf" download
+         class="w-full sm:w-auto px-6 py-3 rounded-lg bg-cyan text-ink font-mono text-sm font-medium hover:bg-cyan/90 transition-colors text-center">
+        Download Resume / CV
+      </a>
+      <a href="mailto:abdelrahman20102002aaa@gmail.com"
+         class="w-full sm:w-auto px-6 py-3 rounded-lg border border-line text-fg font-mono text-sm hover:border-cyan hover:text-cyan transition-colors text-center">
+        Contact Me via Email
+      </a>
+    </div>
+  </div>
+ 
+  <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted hover:text-cyan transition-colors">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </a>
+</header>
+ 
+<!-- ABOUT -->
+<section id="about" class="reveal max-w-4xl mx-auto px-6 py-24">
+  <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-3">// 01 — ABOUT</p>
+  <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-6">Foundations in the infrastructure. Focus on the threats.</h2>
+  <p class="text-muted leading-relaxed text-lg">
+    Network Engineer with a strong foundation in enterprise routing, switching, and security protocols, actively transitioning into a SOC Analyst role. Highly disciplined with a military background, analytical mindset, and dedicated to defending network infrastructures against cyber threats.
+  </p>
+</section>
+ 
+<!-- COVER LETTER -->
+<section id="cover-letter" class="reveal max-w-4xl mx-auto px-6 py-16">
+  <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-3">// 02 — COVER LETTER</p>
+  <div class="relative bg-panel border border-line rounded-xl p-8 sm:p-10">
+    <div class="absolute left-0 top-8 bottom-8 w-1 bg-cyan/60 rounded-full"></div>
+    <p class="text-fg/85 leading-relaxed text-base sm:text-lg pl-4">
+      I am a dedicated Network Engineer actively transitioning into a SOC Analyst role. My background includes rigorous training at the Military Academy, which instills strong discipline, resilience, and attention to detail. Combined with hands-on experience in enterprise routing, switching, and network security protocols, I specialize in traffic analysis and threat detection. I aim to apply my foundational networking expertise and disciplined mindset to defend enterprise infrastructure against emerging cyber threats.
+    </p>
+  </div>
+</section>
+ 
+<!-- SKILLS -->
+<section id="skills" class="reveal max-w-6xl mx-auto px-6 py-16">
+  <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-3">// 03 — TECHNICAL SKILLS</p>
+  <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-10">Where networking meets defense.</h2>
+ 
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="skill-card bg-panel border border-line rounded-xl p-6">
+      <div class="w-10 h-10 rounded-lg bg-cyan/10 flex items-center justify-center mb-4">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.6"><path d="M4 12h16M4 6h16M4 18h10"/></svg>
+      </div>
+      <h3 class="font-display font-semibold text-lg mb-3">Routing &amp; Switching</h3>
+      <div class="flex flex-wrap gap-2 font-mono text-[12px] text-muted">
+        <span class="border border-line rounded px-2 py-1">OSPF</span>
+        <span class="border border-line rounded px-2 py-1">BGP</span>
+        <span class="border border-line rounded px-2 py-1">VLANs</span>
+        <span class="border border-line rounded px-2 py-1">ACLs</span>
+        <span class="border border-line rounded px-2 py-1">NAT</span>
+        <span class="border border-line rounded px-2 py-1">DHCP</span>
+        <span class="border border-line rounded px-2 py-1">IPv6</span>
+      </div>
+    </div>
+ 
+    <div class="skill-card bg-panel border border-line rounded-xl p-6">
+      <div class="w-10 h-10 rounded-lg bg-cyan/10 flex items-center justify-center mb-4">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
+      </div>
+      <h3 class="font-display font-semibold text-lg mb-3">Security &amp; SOC Operations</h3>
+      <div class="flex flex-wrap gap-2 font-mono text-[12px] text-muted">
+        <span class="border border-line rounded px-2 py-1">Wireshark Traffic Analysis</span>
+        <span class="border border-line rounded px-2 py-1">Packet Inspection</span>
+        <span class="border border-line rounded px-2 py-1">Incident Handling Basics</span>
+        <span class="border border-line rounded px-2 py-1">Network Hardening</span>
+      </div>
+    </div>
+ 
+    <div class="skill-card bg-panel border border-line rounded-xl p-6">
+      <div class="w-10 h-10 rounded-lg bg-cyan/10 flex items-center justify-center mb-4">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.6"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>
+      </div>
+      <h3 class="font-display font-semibold text-lg mb-3">Tools &amp; Platforms</h3>
+      <div class="flex flex-wrap gap-2 font-mono text-[12px] text-muted">
+        <span class="border border-line rounded px-2 py-1">Huawei eNSP</span>
+        <span class="border border-line rounded px-2 py-1">Cisco Packet Tracer</span>
+        <span class="border border-line rounded px-2 py-1">Linux / CLI</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="reveal max-w-4xl mx-auto px-6 py-16">
+  <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-3">// 04 — CERTIFICATIONS</p>
+  <div class="bg-panel border border-line rounded-xl p-8">
+    <div class="flex items-start gap-3 mb-4">
+      <span class="mt-1 w-2 h-2 rounded-full bg-cyan pulse-dot shrink-0"></span>
+      <p class="text-fg/90 leading-relaxed">
+        Officially Certified <span class="text-cyan font-medium">Huawei HCIA-Datacom Engineer</span> (International Certification valid through <span class="font-mono">Jul 2029</span>). Currently preparing for the <span class="text-amber font-medium">Cisco CCNA Official Exam</span> while having successfully completed all official CCNA Academy Tracks.
+      </p>
+    </div>
+    <a href="certificates.html"
+       class="inline-flex items-center gap-2 font-mono text-sm text-cyan hover:gap-3 transition-all mt-2">
+      View All Verified Certificates &amp; Images
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+ 
+<!-- EDUCATION -->
+<section id="education" class="reveal max-w-4xl mx-auto px-6 py-16">
+  <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-3">// 05 — EDUCATION</p>
+  <div class="grid sm:grid-cols-2 gap-5">
+    <div class="bg-panel border border-line rounded-xl p-6">
+      <h3 class="font-display font-semibold text-lg mb-1">Faculty of Commerce</h3>
+      <p class="font-mono text-xs text-muted">Zagazig University</p>
+    </div>
+    <div class="bg-panel border border-line rounded-xl p-6">
+      <h3 class="font-display font-semibold text-lg mb-1">Military Academy</h3>
+      <p class="font-mono text-xs text-muted">Discipline &amp; leadership foundation</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal max-w-4xl mx-auto px-6 py-16">
+  <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-3">// 06 — EXPERIENCE</p>
+  <div class="space-y-5">
+    <div class="relative pl-6 bg-panel border border-line rounded-xl p-6">
+      <div class="absolute left-0 top-6 bottom-6 w-1 bg-cyan/60 rounded-full"></div>
+      <h3 class="font-display font-semibold text-lg mb-1">Military Academy Graduate / Trainee</h3>
+      <p class="text-muted leading-relaxed text-sm">Developed high military discipline, leadership under pressure, rigorous problem-solving, and strict adherence to operational protocols.</p>
+    </div>
+    <div class="relative pl-6 bg-panel border border-line rounded-xl p-6">
+      <div class="absolute left-0 top-6 bottom-6 w-1 bg-cyan/60 rounded-full"></div>
+      <h3 class="font-display font-semibold text-lg mb-1">Network &amp; Security Trainee — Digilians Academy</h3>
+      <p class="text-muted leading-relaxed text-sm">Applied practical hands-on training in enterprise routing and switching, network security fundamentals, and troubleshooting.</p>
+    </div>
+    <div class="relative pl-6 bg-panel border border-line rounded-xl p-6">
+      <div class="absolute left-0 top-6 bottom-6 w-1 bg-cyan/60 rounded-full"></div>
+      <h3 class="font-display font-semibold text-lg mb-1">Hands-on Labs</h3>
+      <p class="text-muted leading-relaxed text-sm">Topologies on Huawei eNSP &amp; Cisco Packet Tracer, packet analysis using Wireshark.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- PROFESSIONAL FOCUS -->
+<section id="focus" class="reveal max-w-4xl mx-auto px-6 py-16">
+  <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-3">// 07 — PROFESSIONAL FOCUS</p>
+  <p class="text-fg/85 leading-relaxed text-lg mb-6">
+    Focused on SOC Analyst L1/L2 operations, security event monitoring, log analysis, and threat detection — leveraging deep networking knowledge to mitigate vulnerabilities before they're exploited.
+  </p>
+  <div class="flex flex-wrap gap-2 font-mono text-xs">
+    <span class="border border-cyan/30 text-cyan rounded-full px-3 py-1.5">SOC L1/L2 Operations</span>
+    <span class="border border-cyan/30 text-cyan rounded-full px-3 py-1.5">Security Event Monitoring</span>
+    <span class="border border-cyan/30 text-cyan rounded-full px-3 py-1.5">Log Analysis</span>
+    <span class="border border-cyan/30 text-cyan rounded-full px-3 py-1.5">Threat Detection</span>
+    <span class="border border-cyan/30 text-cyan rounded-full px-3 py-1.5">Vulnerability Mitigation</span>
+  </div>
+</section>
+ 
+<!-- FOOTER / CONTACT -->
+<footer id="contact" class="reveal border-t border-line mt-16">
+  <div class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <p class="font-mono text-xs text-cyan tracking-[0.2em] mb-3">// 08 — CONTACT</p>
+    <h2 class="font-display text-2xl sm:text-3xl font-semibold mb-8">Let's connect.</h2>
+ 
+    <div class="flex items-center justify-center gap-4 mb-10">
+      <a href="https://wa.me/2011485697963" target="_blank" rel="noopener" aria-label="WhatsApp"
+         class="social-btn w-12 h-12 rounded-full border border-line flex items-center justify-center text-muted">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.82.84-3.06-.2-.32a8.2 8.2 0 0 1-1.26-4.4c0-4.53 3.7-8.23 8.24-8.23 4.53 0 8.23 3.7 8.23 8.24 0 4.53-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.12-1.06-.39-2.02-1.24-.75-.66-1.25-1.48-1.4-1.73-.15-.25-.02-.38.11-.5.11-.11.25-.3.37-.44.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42-.14-.01-.31-.01-.48-.01a.93.93 0 0 0-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.6.12.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/abdelrahman-mohamed-network-" target="_blank" rel="noopener" aria-label="LinkedIn"
+         class="social-btn w-12 h-12 rounded-full border border-line flex items-center justify-center text-muted">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V23h-4V8z"/></svg>
+      </a>
+      <a href="https://abdelrahman20102002aaa-del.github.io/Abdelrahman-Mohamed-Alfararji.github.io/" target="_blank" rel="noopener" aria-label="GitHub"
+         class="social-btn w-12 h-12 rounded-full border border-line flex items-center justify-center text-muted">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.67.8.55C20.71 21.38 24 17.08 24 12 24 5.65 18.35.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/share/1BZRj88xQc/" target="_blank" rel="noopener" aria-label="Facebook"
+         class="social-btn w-12 h-12 rounded-full border border-line flex items-center justify-center text-muted">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.87h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+      </a>
+    </div>
+ 
+    <p class="font-mono text-sm text-muted mb-1">abdelrahman20102002aaa@gmail.com</p>
+    <p class="font-mono text-sm text-muted mb-8">+20 114 856 9763</p>
+ 
+    <p class="font-mono text-[11px] text-muted/60">© <span id="year"></span> Abdelrahman Mohamed Alfararji — built with intent, not templates.</p>
+  </div>
+</footer>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+ 
+  // ---- Nav scroll style ----
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 20) {
+      nav.classList.add('bg-ink/90', 'backdrop-blur', 'border-b', 'border-line');
+    } else {
+      nav.classList.remove('bg-ink/90', 'backdrop-blur', 'border-b', 'border-line');
+    }
+  });
+ 
+  // ---- Mobile menu ----
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+    var mobileLinks = mobileMenu.querySelectorAll('a');
+    for (var i = 0; i < mobileLinks.length; i++) {
+      mobileLinks[i].addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+      });
+    }
+  }
+ 
+  // ---- Dynamic typing animation (simple, robust) ----
+  var phrases = [
+    'Network Engineer',
+    'SOC Analyst Track',
+    'Certified Huawei HCIA-Datacom Engineer',
+    'Preparing for Cisco CCNA Official Exam'
+  ];
+  var typewriterEl = document.getElementById('typewriter');
+ 
+  if (typewriterEl) {
+    var phraseIndex = 0;
+    var charIndex = 0;
+    var isDeleting = false;
+    var typeSpeed = 55;
+    var deleteSpeed = 30;
+    var pauseAfterType = 1600;
+    var pauseAfterDelete = 300;
+ 
+    function runTypewriter() {
+      var currentPhrase = phrases[phraseIndex];
+ 
+      if (!isDeleting) {
+        charIndex++;
+        typewriterEl.textContent = currentPhrase.slice(0, charIndex);
+ 
+        if (charIndex === currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(runTypewriter, pauseAfterType);
+          return;
+        }
+        setTimeout(runTypewriter, typeSpeed);
+      } else {
+        charIndex--;
+        typewriterEl.textContent = currentPhrase.slice(0, charIndex);
+ 
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(runTypewriter, pauseAfterDelete);
+          return;
+        }
+        setTimeout(runTypewriter, deleteSpeed);
+      }
+    }
+ 
+    runTypewriter();
+  }
+ 
+  // ---- Reveal on scroll ----
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('in');
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+ 
+  // ---- Footer year ----
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+ 
+});
+</script>
+ 
+</body>
+</html>
