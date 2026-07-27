@@ -1,3 +1,4 @@
+ates · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,6 +59,14 @@
   .cert-card:hover { border-color:#4DD9C9; box-shadow: 0 0 0 1px rgba(77,217,201,0.25), 0 16px 34px -16px rgba(77,217,201,0.3); transform: translateY(-4px); }
  
   .cert-thumb { aspect-ratio: 4/3; background: linear-gradient(135deg, #141C28, #0F1620); }
+ 
+  .thumb-blur { filter: blur(6px) brightness(0.6); transform: scale(1.05); }
+ 
+  .coming-soon-badge {
+    background: rgba(10,14,20,0.75);
+    border: 1px solid rgba(77,217,201,0.4);
+    backdrop-filter: blur(4px);
+  }
  
   .section-title { position: relative; display: inline-block; padding-bottom: 16px; }
   .section-title::after {
@@ -127,51 +136,66 @@
  
 <main class="max-w-6xl mx-auto px-6 pb-24">
  
-  <!-- HCIA-Datacom Feature (PDF certificate) -->
+  <!-- HCIA-Datacom Feature (International Certification) -->
   <section class="reveal mb-16">
     <h2 class="section-title font-display text-2xl font-semibold mb-6">International Certification</h2>
     <div class="cert-card bg-panel border border-line rounded-xl overflow-hidden md:flex">
-      <div class="cert-thumb md:w-80 shrink-0 relative flex flex-col items-center justify-center gap-3 text-muted">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4">
-          <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
-          <path d="M15 2v5h5"/>
-          <path d="M9 13h6M9 17h4"/>
-        </svg>
-        <span class="font-mono text-[11px]">PDF Certificate</span>
+      <div class="cert-thumb md:w-80 shrink-0 relative flex items-center justify-center">
+        <!-- File: "hcia-datacom-international.png" (root of repo, no encoding needed) -->
+        <img src="hcia-datacom-international.png" alt="Huawei HCIA-Datacom International Certification"
+             class="absolute inset-0 w-full h-full object-cover"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-3 text-muted">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="font-mono text-[11px]">Add image</span>
+        </div>
       </div>
       <div class="p-7 flex flex-col justify-center">
         <h3 class="font-display font-semibold text-xl mb-2">Huawei HCIA-Datacom</h3>
         <p class="text-muted text-sm mb-4">International Certification</p>
-        <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-muted mb-5">
+        <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-muted">
           <span>CERT NO: <span class="text-fg/90">010103901855810442973098281</span></span>
           <span>VALID THROUGH: <span class="text-cyan">Jul 2029</span></span>
         </div>
-        <!-- File: "HCIA international datacome.pdf" (space encoded as %20) -->
-        <a href="HCIA%20international%20datacome.pdf" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 font-mono text-sm text-cyan hover:gap-3 transition-all w-fit">
-          View Official PDF Certificate
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
   </section>
  
-  <!-- Cisco Networking Academy -->
+  <!-- CCNA Certification Track (in progress) -->
   <section class="reveal mb-16">
-    <h2 class="section-title font-display text-2xl font-semibold mb-6">Cisco Networking Academy</h2>
+    <h2 class="section-title font-display text-2xl font-semibold mb-6">CCNA Certification Track</h2>
+    <div class="cert-card bg-panel border border-line rounded-xl overflow-hidden max-w-sm">
+      <div class="cert-thumb relative flex items-center justify-center overflow-hidden">
+        <!-- File: "ccna.png" (root of repo, no encoding needed) -->
+        <img src="ccna.png" alt="CCNA Certification Track"
+             class="thumb-blur absolute inset-0 w-full h-full object-cover"
+             onerror="this.style.display='none';" />
+        <span class="coming-soon-badge relative z-10 font-mono text-xs text-cyan tracking-[0.1em] px-4 py-2 rounded-full">
+          Coming Soon
+        </span>
+      </div>
+      <div class="p-5">
+        <h4 class="font-display font-semibold text-sm mb-1">Cisco CCNA</h4>
+        <p class="font-mono text-[11px] text-muted">Verification in progress</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Academic Certification -->
+  <section class="reveal">
+    <h2 class="section-title font-display text-2xl font-semibold mb-6">Academic Certification</h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
  
-      <!-- File: "CCNA-_Enterprise_Networking-_Security-_and..." was truncated in the source list.
-           Best-guess completion used below — replace with the exact filename from your repo if it differs. -->
-      <a href="CCNA-_Enterprise_Networking-_Security-_and_Automation.png" target="_blank" rel="noopener"
+      <!-- File: "ccna-enterprise-networking.png" (root of repo, no encoding needed) -->
+      <a href="ccna-enterprise-networking.png" target="_blank" rel="noopener"
          class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
         <div class="cert-thumb relative flex items-center justify-center">
-          <img src="CCNA-_Enterprise_Networking-_Security-_and_Automation.png" alt="CCNA Enterprise Networking, Security, and Automation"
+          <img src="ccna-enterprise-networking.png" alt="CCNA Enterprise Networking, Security, and Automation"
                class="absolute inset-0 w-full h-full object-cover"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>
-            <span class="font-mono text-[10px] px-3 text-center">Check exact filename</span>
+            <span class="font-mono text-[10px]">Add image</span>
           </div>
         </div>
         <div class="p-5">
@@ -180,17 +204,16 @@
         </div>
       </a>
  
-      <!-- File: "CCNA-_Switching-_Routing-_and_Wireless_Esse..." was truncated in the source list.
-           Best-guess completion used below — replace with the exact filename from your repo if it differs. -->
-      <a href="CCNA-_Switching-_Routing-_and_Wireless_Essentials.png" target="_blank" rel="noopener"
+      <!-- File: "ccna-switching-routing.png" (root of repo, no encoding needed) -->
+      <a href="ccna-switching-routing.png" target="_blank" rel="noopener"
          class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
         <div class="cert-thumb relative flex items-center justify-center">
-          <img src="CCNA-_Switching-_Routing-_and_Wireless_Essentials.png" alt="CCNA Switching, Routing, and Wireless Essentials"
+          <img src="ccna-switching-routing.png" alt="CCNA Switching, Routing, and Wireless Essentials"
                class="absolute inset-0 w-full h-full object-cover"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>
-            <span class="font-mono text-[10px] px-3 text-center">Check exact filename</span>
+            <span class="font-mono text-[10px]">Add image</span>
           </div>
         </div>
         <div class="p-5">
@@ -199,17 +222,16 @@
         </div>
       </a>
  
-      <!-- File: "CCNA-_Introduction_to_Networks_certificate_a..." was truncated in the source list.
-           Best-guess completion used below — replace with the exact filename from your repo if it differs. -->
-      <a href="CCNA-_Introduction_to_Networks_certificate_a.png" target="_blank" rel="noopener"
+      <!-- File: "ccna-intro-networks.png" (root of repo, no encoding needed) -->
+      <a href="ccna-intro-networks.png" target="_blank" rel="noopener"
          class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
         <div class="cert-thumb relative flex items-center justify-center">
-          <img src="CCNA-_Introduction_to_Networks_certificate_a.png" alt="CCNA Introduction to Networks"
+          <img src="ccna-intro-networks.png" alt="CCNA Introduction to Networks"
                class="absolute inset-0 w-full h-full object-cover"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>
-            <span class="font-mono text-[10px] px-3 text-center">Check exact filename</span>
+            <span class="font-mono text-[10px]">Add image</span>
           </div>
         </div>
         <div class="p-5">
@@ -218,17 +240,16 @@
         </div>
       </a>
  
-      <!-- File: "Introduction_to_Cybersecurity_certificate_am01..." was truncated in the source list.
-           Best-guess completion used below — replace with the exact filename from your repo if it differs. -->
-      <a href="Introduction_to_Cybersecurity_certificate_am01.png" target="_blank" rel="noopener"
+      <!-- File: "intro-cybersecurity.png" (root of repo, no encoding needed) -->
+      <a href="intro-cybersecurity.png" target="_blank" rel="noopener"
          class="cert-card bg-panel border border-line rounded-xl overflow-hidden block">
         <div class="cert-thumb relative flex items-center justify-center">
-          <img src="Introduction_to_Cybersecurity_certificate_am01.png" alt="Introduction to Cybersecurity"
+          <img src="intro-cybersecurity.png" alt="Introduction to Cybersecurity"
                class="absolute inset-0 w-full h-full object-cover"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <div style="display:none;" class="absolute inset-0 flex-col items-center justify-center gap-2 text-muted">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4DD9C9" stroke-width="1.4"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
-            <span class="font-mono text-[10px] px-3 text-center">Check exact filename</span>
+            <span class="font-mono text-[10px]">Add image</span>
           </div>
         </div>
         <div class="p-5">
@@ -236,14 +257,6 @@
           <p class="font-mono text-[11px] text-muted">Cisco Networking Academy</p>
         </div>
       </a>
- 
-    </div>
-  </section>
- 
-  <!-- Huawei ICT Academy -->
-  <section class="reveal">
-    <h2 class="section-title font-display text-2xl font-semibold mb-6">Huawei ICT Academy</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
  
       <!-- File: "_HCIA-Cloud Service V3.5 Course (Arabic).png" (space encoded as %20) -->
       <a href="_HCIA-Cloud%20Service%20V3.5%20Course%20(Arabic).png" target="_blank" rel="noopener"
